@@ -1,0 +1,304 @@
+/* Geral */
+*{
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+body{
+    background-color: rgb(27, 92, 145);
+}
+h1{
+    text-align: center;
+    color: white;
+    padding-top: 10px;
+}
+main{
+    padding-top: 20px;
+    display: none;
+    grid-template: 1fr 1fr 1fr 1fr 1fr / 1fr 1fr 1fr 1fr;
+    justify-items: center;
+    gap: 20px;
+    max-width: 800px;
+    margin: auto;
+    width: 95%;
+    height: 100%;
+    animation: surgir 1s linear forwards;
+}
+/* Start game */
+
+.start_game{
+    text-transform: uppercase;
+    border: 2px solid black;
+    border-radius: 20px;
+    display: block;
+    background-color: rgb(255, 255, 255);
+    color: royalblue;
+    text-align: center;
+    width: 80%;
+    max-width: 400px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    padding: 20px 40px;
+    transform: translate(-50%,-50%)
+}
+.start_game h3{
+    margin: 10px 20px;
+}
+#btns{
+    margin-top: 30px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    gap: 30px;
+}
+#btn_start, #btn_regras{
+    cursor: pointer;
+    background-color: whitesmoke;
+    color: royalblue;
+    width: 150px;
+    padding: 5px 10px;
+    font-size: 20px;
+    text-transform: uppercase;
+    font-weight: 700;
+    transition: all .4s;
+    border: 2px solid royalblue;
+}
+#btn_start:hover, #btn_regras:hover{
+    color: whitesmoke;
+    background-color: royalblue;
+    border: 2px solid whitesmoke;
+}
+.regras{
+    text-transform: lowercase;
+    display: none;
+    width: 100%;
+    margin-top: 10px;
+    background-color: whitesmoke;
+    border: 1px solid black;
+    color: rgb(46, 74, 155);
+    padding: 10px 20px;
+    border-radius: 10px;
+    text-align: justify;
+}
+.regras::first-letter{
+    text-transform: uppercase;
+}
+.regras.on{
+    display: block;
+}
+#warning{
+    color: rgb(218, 218, 35);
+    font-size: 12px;
+    margin-top: 20px;
+}
+/* Timer */
+
+#container{
+    margin: auto;
+    width: 95%;
+    max-width: 800px;
+    display: none;
+    justify-content: center;
+    gap: 30px;
+    animation: surgir 1s linear forwards;
+}
+#container_timer{
+    margin-top: 20px;
+    padding: 2px 10px 10px 10px;
+    height: 40px;
+    gap: 20px;
+    display: flex;
+    font-size: 14px;
+    background-color: tomato;
+    border-radius: 20px;
+}
+#title{
+    color: white;
+}
+#timer{
+    margin-bottom: 30px;
+}
+#container_timer{
+    font-size: 14px;
+}
+/* Cartas */
+
+.card{
+    outline: none;
+    transition: .5s;
+    transform-style: preserve-3d;
+    position: relative;
+    cursor: pointer;
+    width: 125px;
+    height: 150px;
+}
+.front, .back{
+    position: absolute;
+    backface-visibility: hidden;
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, .45);
+    display: flex;
+    border: 5px solid black;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;   
+    border-radius: 15px;
+}
+.front{
+    transform: rotateY(180deg);
+    background-color: #005b77;
+}
+.back{
+   color: black;
+   font-weight: 900;
+   font-size: 82px;
+   background-image: linear-gradient(to bottom, #101c2c, #233d5f ,#3c6aa7 ,whitesmoke);
+}
+.back:hover{
+    transition: all .5s;
+    color: white;
+    border-color: rgb(202, 201, 201);
+}
+.rotate{
+    transform: rotateY(180deg);
+}
+/* Tela final (ghost) */
+
+#end_game{
+    z-index: 10000;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    top: 0%;
+    left: 0%;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, .65);
+    overflow: hidden;
+    animation: surgir 1s linear forwards;
+}
+#end_game p{
+    text-align: center;
+    font-size: 28px;
+}
+#end_game div{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-weight: 900;
+    transition: all .3s;
+}
+#end_game section{
+    border: 3px solid black;
+    position: relative;
+    display: grid;
+    cursor: pointer;
+    font-size: 24px;
+    padding: 10px 20px;
+    border-radius: 35px;
+    background-color: #005b77;
+    z-index: 100;
+}
+#end_game section::after{
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 0%;
+    background-color: #07abdd;
+    height: 100%;
+    width: 0%;
+    transform: translateX(-50%);
+    border-radius: 35px;
+    transition:all .2s;
+}
+#end_game section:hover::after{
+    transition:all .5s;
+    width: 100%;
+}
+section p{
+    z-index: 100;
+}
+/* Créditos */
+
+footer h1{
+    font-size: 16px;
+    padding: 30px 0px 30px 0px;
+}
+/* @medias */
+
+@media screen and (max-width: 595px){
+    .card{
+        width: 100px;
+        height: 125px;
+    }
+    .icon{
+        width: 75px;
+    }
+    #container{
+        flex-direction: column;
+        gap: 0px;
+    }
+    #container h1{
+        order: -1;
+    }
+    #container_timer{
+        margin: 20px auto 0px auto;
+        height: 30px;
+        font-size: 12px;
+        width: 60%;
+        justify-content: center;
+    }
+}
+@media screen and (max-width: 495px){
+    .card{
+        width: 75px;
+        height: 100px;
+    }
+    .back{
+        font-size: 50px;
+    }
+    .icon{
+        width: 60px;
+    }
+    #container_timer{
+        margin: 10px auto 0px auto;
+    }
+    #container h1{
+        font-size: 22px;
+    }
+}
+@media screen and (max-width: 395px){
+    .card{
+        width: 60px;
+        height: 85px;
+    }
+    .back{
+        font-size: 40px;
+    }
+    .front, .back{
+        box-shadow: 5px 5px 5px rgba(0, 0, 0, .45);
+    }
+    .icon{
+        width: 45px;
+    }
+}
+
+@keyframes surgir{
+    0%{
+        opacity: 0;
+        margin-bottom: 20px;
+    }
+    50%{
+        opacity: .6;
+    }
+    100%{
+        margin-bottom: 0px;
+        opacity: 1;
+    }
+}

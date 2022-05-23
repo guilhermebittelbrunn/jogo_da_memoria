@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogo da memória</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="apple-touch-icon" sizes="180x180" href="icon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="icon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="icon/favicon-16x16.png">
+    <link rel="manifest" href="icon/site.webmanifest">
+</head>
+<body>
+    <!-- Tela inicial  -->
+    <div class="start_game">
+        <div>
+            <h2>Bem vindo ao jogo</h2>
+            <h3>Iniciar jogo?</h3>
+            <div id="btns">
+                <div id="btn_regras" onclick="show_regras()">
+                    <p>regras</p>
+                </div>
+                <div id="btn_start" onclick="start()">
+                    <p>iniciar</p>
+                </div>
+            </div>
+            <p class="regras">O jogo da memória é um jogo que pode ser jogado para aumentar a concentração e a memória. 
+            A jogada é quando um jogador vira duas cartas e coloca-as para cima, se o jogador virar duas cartas que não correspondem,
+            ambos as cartas devem ser virados para baixo novamente no mesmo local.o objetivo é identificar todos os pares no menor período de tempo possível.</p> 
+            <h3 id="warning"> Jogo com problemas de compatibilidade em dispositivos ios (iPhone)</h3>
+        </div>
+    </div>
+    <!-- Tabuleiro -->
+    <div id="container">
+        <div id="container_timer">
+            <div id="title">
+                <h2>Timer:</h2>
+            </div>
+            <div id="timer">
+                <h2 id="clock">00:00</h2>
+            </div>
+        </div>
+        <h1>Jogo da Memória</h1>
+        <div id="container_timer">
+            <div id="title">
+                <h2>Movimentos:</h2>
+            </div>
+            <div id="timer" class="move">
+                <h2>0</h2>
+            </div>
+        </div>
+    </div>
+    <main id="board"></main>
+    <!-- Tela de fim de jogo (ghost) -->
+        <div id="end_game">
+            <div>
+                <p>Fim de Jogo</p>
+                <p id="recorde_tempo"></p>
+                <p id="recorde_moves"></p>
+                <section onclick="restart()">
+                    <p>Recomeçar</p>
+                </section>
+            </div>
+        </div>
+    <!-- Créditos -->
+    <footer>
+        <h1>©Guilherme Bittelbrunn</h1>
+    </footer>
+    <script src="game.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
+<img src="images/" alt="">
