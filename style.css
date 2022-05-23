@@ -232,6 +232,22 @@ footer h1{
 }
 /* @medias */
 
+@media screen and (max-width: 1650px){
+    .card{
+        width: 90px;
+        height: 110px;
+    }
+    .icon{
+        width: 60px;
+    }
+    .back{
+        font-size: 50px;
+    }
+    main{
+        gap: 10px;
+    }
+
+}
 @media screen and (max-width: 595px){
     .card{
         width: 100px;
