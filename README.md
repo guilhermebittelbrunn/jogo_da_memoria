@@ -14,7 +14,6 @@
     <img src="jogo da memoria.gif" style="width:80%">
     <hr>
     <h3><a href="https://guilhermebittelbrunn.github.io/jogo_da_memoria/"> Clique aqui para ver o site</a></h3>
-    <p style="color:yellow">Aviso: Problemas de compatibilidade com safari</p>
     <p>Created by: Guilherme Bittelbrunn</p>
 </main>
 
